@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get in Touch</title>
+        <link href="contactus.css" rel="stylesheet">
+        <script src="https://unpkg.com/feather-icons"></script>
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400,0;500,0;600,0;700,1;100,1;200,1;200,1;300,1;400,1;500,1;600,1;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <section class="hero">
+            <div class="main-width">
+                <header>
+                    <div class="logo">
+                        <a href="index.html"><i class="fa-solid fa-i"></i></a>>
+                    </div>
+                    <nav>
+                         <div class="hamb">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                         </div>
+                       <ul class="nav-list">
+                             <li><a href="index.html">Home</a></li> 
+                             <li><a href="about.html">About</a></li> 
+                             <li><a href="/about.html#services">My Services</a></li> 
+                             <li><a href="cv.html">Curriculum Vitae</a></li>  
+                             <li><a href="contactus.html">Get in Touch</a></li>  
+                         </ul>
+                    </nav>
+                </header>
+                <div class="container">
+                    <h2>Get in Touch</h2>
+                    <form name="submit-to-google-sheet">
+                    <div class="row100">
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="FName" required>
+                                <span class="text">First Name</span> 
+                                <span class="line"></span> 
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="LName" required>
+                                <span class="text">Last Name</span> 
+                                <span class="line"></span> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="Email" required>
+                                <span class="text">Email</span> 
+                                <span class="line"></span> 
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="Mobile" required>
+                                <span class="text">Mobile</span> 
+                                <span class="line"></span> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="col">
+                            <div class="inputBox textarea">
+                                <textarea required="required" name="Message"> </textarea>
+                                <span class="text">Type Your Message</span> 
+                                <span class="line"></span> 
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="col">
+                                <input type="submit" value="Send Message">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="bottom">
+                    <p>&copy; 2022 Issa-All Rights Reserved</p>
+                </div>
+            </div>
+            
+         </section>
+         <script type="text/javascript" src="script.js"></script> 
+         <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxxrIpLb64jvLTmmf9nUxY3fzwt9lqAtYly5eSuOsTPH1zd7U4Bcz2BJRUFvKY0KTqm/exec'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>
